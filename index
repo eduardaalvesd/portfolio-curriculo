@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfólio - Eduarda Alves</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Fade-in para a página inteira */
+    body {
+      background: #fff0f6; /* rosa super suave */
+      color: #5a3e59; /* rosa médio escuro */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 20px 50px;
+      min-height: 100vh;
+      animation: fadeInPage 1.2s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInPage {
+      to { opacity: 1; }
+    }
+
+    /* Fade-in para o main */
+    main {
+      width: 100%;
+      max-width: 900px;
+      background: #ffffff;
+      padding: 40px 45px;
+      border-radius: 14px;
+      box-shadow: 0 12px 30px rgba(211, 108, 163, 0.25);
+      animation: fadeInContent 1.5s ease forwards;
+      opacity: 0;
+    }
+    @keyframes fadeInContent {
+      to { opacity: 1; }
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      border: 3px solid #d36ca3; /* rosa forte */
+      box-shadow: 0 4px 15px rgba(211, 108, 163, 0.4);
+      animation: pulse 3s ease-in-out infinite;
+      /* suavizar movimento */
+      transform-origin: center;
+    }
+
+    /* Pulsar suave */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: #d36ca3;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #a14d7e;
+      margin-bottom: 5px;
+    }
+
+    header a {
+      color: #d36ca3;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    /* Seções com elevação e sombra suave, sombra aumenta ao hover */
+    section {
+      margin-bottom: 40px;
+      padding: 20px 25px;
+      border-radius: 12px;
+      background: #fff0f6;
+      box-shadow: 0 4px 10px rgba(211, 108, 163, 0.15);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    section:hover {
+      box-shadow: 0 10px 30px rgba(211, 108, 163, 0.4);
+      transform: translateY(-5px);
+    }
+
+    section h2 {
+      border-bottom: 3px solid #d36ca3;
+      padding-bottom: 10px;
+      margin-bottom: 22px;
+      color: #d36ca3;
+      font-weight: 700;
+      font-size: 1.9rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 16px;
+      line-height: 1.6;
+      color: #7e5a7e;
+      font-weight: 500;
+    }
+
+    li strong {
+      color: #d36ca3;
+    }
+
+    li a {
+      color: #d36ca3;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    li a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 1rem;
+      color: #a14d7e;
+      text-align: center;
+    }
+
+    /* Estilo dos ícones no topo com tooltip */
+    .contact-links {
+      margin: 10px 0 15px;
+    }
+
+    .contact-links a {
+      position: relative;
+      margin: 0 15px;
+      font-size: 1.6rem;
+      color: #d36ca3;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .contact-links a::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 130%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #d36ca3;
+      color: #fff0f6;
+      padding: 6px 12px;
+      border-radius: 6px;
+      white-space: nowrap;
+      font-size: 0.9rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease-in-out;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(211, 108, 163, 0.3);
+    }
+
+    .contact-links a:hover::after {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .contact-links a svg {
+      vertical-align: middle;
+    }
+
+    /* Remove texto padrão, só mostra tooltip no hover */
+    .contact-links span {
+      display: none;
+    }
+
+    @media (max-width: 650px) {
+      header h1 {
+        font-size: 2.4rem;
+      }
+
+      main {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <head>
+    <link rel="icon" href="Preview.png" type="image/png" />
+
+    <img src="minha_foto.jpg" alt="Foto Eduarda Alves"/>
+
+
+    <h1>Eduarda Alves Dutra</h1>
+    <p class="contact-links">
+      <a href="#" data-tooltip="Rua Gualter Rocha 289, Europa, Contagem - MG" title="Endereço">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#d36ca3" viewBox="0 0 24 24" width="24" height="24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+        <span>Endereço</span>
+      </a>
+      <a href="tel:+5531982316701" data-tooltip="(31) 98231-6701" title="Telefone">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#d36ca3" viewBox="0 0 24 24" width="24" height="24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.54.57 1 1 0 011 1v3.5a1 1 0 01-1 1A17.94 17.94 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.54 1 1 0 01-.21 1.11z"/></svg>
+        <span>Telefone</span>
+      </a>
+      <a href="mailto:eduardaalvesdutra2026@gmail.com" data-tooltip="eduardaalvesdutra2026@gmail.com" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#d36ca3" viewBox="0 0 24 24" width="24" height="24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 2v.01L12 13 4 6.01V6h16z"/></svg>
+        <span>Email</span>
+      </a>
+    </p>
+    <p>
+      <a href="http://www.linkedin.com/in/eduardaalvesdutraa" target="_blank" rel="noopener noreferrer" style="color:#d36ca3; font-weight:600;">LinkedIn</a> |
+      <a href="https://github.com/eduardaalves" target="_blank" rel="noopener noreferrer" style="color:#d36ca3; font-weight:600;">GitHub</a>
+  
+</p>
+  </head>
+
+  <main>
+    <section>
+      <h2>Objetivo Profissional</h2>
+      <p>Tenho 23 anos e busco uma oportunidade na área da Tecnologia da Informação para aplicar e desenvolver os conhecimentos adquiridos em minha graduação em Ciência da Computação, com foco em UX e UI, web design, design de interface do usuário, suporte técnico e banco de dados.Quero contribuir para projetos, aprimorando minhas habilidades técnicas e adquirindo experiência prática na área.</p>
+    </section>
+
+    <section>
+      <h2>Resumo Profissional</h2>
+      <p>Sou graduada em  Ciência da Computação, com experiência prévia em vendas, atendimento ao cliente e funções administrativas.Possuo conhecimentos em lógica de programação, programação orientada a objetos e redes de computadores.Na área de design, tenho experiência com criação de artes e projetos no Canva voltado para lojas e estratégias de vendas.Sou comunicativa, proativa e tenho muita disposição para aprender e crescer na área de TI, com interesse forte em UX e UI design.</p>
+    </section>
+
+    <section>
+      <h2>Formação Acadêmica</h2>
+      <ul>
+        <li><strong>Bacharelato</strong>-Ciência da Computação </li>
+        <li><strong>Ensino Médio</strong> – Escola Estadual Professora Maria Coutinho </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Cursos e Certificações</h2>
+      <ul>
+        <li>Lógica de Programação e Algoritmos – Udemy for Business</li>
+        <li>Programação Orientada a Objetos (POO) – Fundação Bradesco</li>
+        <li>Networking Essentials / Redes – Cisco Networking Academy</li>
+        <li>Informática Avançada</li>
+        <li>Canva</li>
+      </ul>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experiência Profissional</h2>
+      <ul>
+        <li><strong>Plataforma Shoes – Vendedora</strong><br>
+          Atendimento direto ao público, vendas e suporte ao cliente.<br>
+          Divulgação e comercialização de produtos, atingindo metas estabelecidas.
+        </li>
+        <li><strong>Clínica Odontológica Denis Massahud – Auxiliar de Dentista / Recepcionista</strong><br>
+          Apoio em procedimentos odontológicos e organização do ambiente clínico.<br>
+          Atendimento e recepção de pacientes, agendamento e prestação de contas.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      
+      <h2>Projetos</h2>
+      <ul>
+        <li><strong>NutriFácil</strong> – Aplicativo mobile para planejamento alimentar personalizado com SQLite e interface intuitiva.</li>
+        <li><strong>SistemaDeNotas.java-1-2</strong> – Projeto em Java para gerenciamento de notas e avaliações escolares com interface simples.</li>
+        <li><strong>Loja Virtual</strong> – E-commerce simples com carrinho de compras e pagamento fictício para simulação.</li>
+        <li><strong>Site Responsivo</strong> – Site desenvolvido com HTML5, CSS3 e JavaScript, com design responsivo para múltiplos dispositivos.</li>
+      </ul>
+    </section>
+
+    <section>
+  <h2>Informações Adicionais</h2>
+  <ul>
+    <li>CNH Categoria B</li>
+    <li>Disponibilidade para início imediato</li>
+    <li>Facilidade de aprendizado e adaptação a novas tecnologias</li>
+  </ul>
+</section>
+
+  </main>
+
+  <footer>
+    <p>Currículo desenvolvido por mim, Eduarda Alves, utilizando HTML e CSS.</p>
+  </footer>
+  
+</body>
+</html>
